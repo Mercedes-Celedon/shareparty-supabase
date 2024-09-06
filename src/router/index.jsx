@@ -1,34 +1,53 @@
-
+import { createBrowserRouter } from "react-router-dom"
+import { Home } from "../pages/Home"
+import { Register } from "../pages/Register"
+import { Login } from "../pages/Login"
+import Layout from "../layout/Layout"
+import {MyParties} from "../pages/MyParties"
+import {CreateParty} from "../pages/CreateParty"
+import {EditParty} from "../pages/EditParty"
+import { SingleParty } from "../pages/SingleParty"
+import {ErrorPage} from "../pages/ErrorPage"
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <Layouthomepage/>,
+        element: <Home/>,
+        errorElement:<ErrorPage />    
+    },
+    {
+        path: "/registrar",
+        element: <Register/>,
+        errorElement:<ErrorPage />    
+    },
+    {
+        path: "/ingresar",
+        element: <Login/>,
         errorElement:<ErrorPage />    
     },
 
-    {   path: "/trackers",
-        errorElement:<ErrorPage />,  
+    {   path: "/fiestas",
         element: <Layout/>,
+        errorElement:<ErrorPage />, 
         children: [
             {
-                path: "tracker1",
-                element: <Tracker1/>,
+                path: "mis-fiestas",
+                element: <MyParties/>,
                 errorElement:<ErrorPage />  
             },
             {
-                path: "tracker2",
-                element: <Tracker2/>,
+                path: "crear",
+                element: <CreateParty/>,
                 errorElement:<ErrorPage />  
             },
             {
-                path: "tracker3",
-                element: <Tracker3/>,
+                path: "{:id}",
+                element: <SingleParty/>,
                 errorElement:<ErrorPage />  
-            },  
+            },
             {
-                path: "tracker5",
-                element: <Tracker5/>,
+                path: "{id}/edit",
+                element: <EditParty/>,
                 errorElement:<ErrorPage />  
             },  
         ]
