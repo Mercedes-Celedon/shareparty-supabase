@@ -41,12 +41,12 @@ export const router = createBrowserRouter([
                 errorElement:<ErrorPage />  
             },
             {
-                path: "{:id}",
+                path: ":id",
                 element: <SingleParty/>,
                 errorElement:<ErrorPage />  
             },
             {
-                path: "{id}/edit",
+                path: ":id/edit",
                 element: <EditParty/>,
                 errorElement:<ErrorPage />  
             },  

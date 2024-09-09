@@ -1,17 +1,28 @@
-import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { NavLink } from 'react-router-dom';
-import { Button } from 'antd';
+import { Layout, Menu, Button } from 'antd';
+import {HomeOutlined,UserOutlined,SettingOutlined,} from '@ant-design/icons';
+import { AddPartyButton } from '../buttons/AddPartyButton';
+import { MyInvitationsButton } from '../buttons/MyInvitationsButton';
+import { LogOutButton } from '../buttons/LogOutButton';
+  
+  const { Header } = Layout;
 
 export const Navbar = () => {
+    //const { userId } = useAuth();
     return(
-        <Sidebar>
-            <Menu>
-                <MenuItem component={<NavLink to="/" activeclassname="active" />} className='navbar'><img src='/images/logo.png' /></MenuItem>
-                <MenuItem component={<NavLink to="/CreateParty" activeclassname="active" />} className='navbar'> 
-                    <Button type="primary"><LogoutOutlined /></Button>
-                    </MenuItem>
-                <MenuItem component={<NavLink to="/" activeclassname="active" />} className='navbar'>logout</MenuItem>
-            </Menu>
-        </Sidebar>
+        <Layout className="layout">
+            <Header>
+                <div className="logo" style={{ color: 'white' }}>
+                    <NavLink to="/" activeclassname="active">
+                        <img src='/images/logo-share-party-white.png' />
+                    </NavLink>
+                </div>
+                <div>
+                    <AddPartyButton />
+                    <MyInvitationsButton />
+                    <LogOutButton />
+                </div>
+            </Header>
+        </Layout>
     )
 }
