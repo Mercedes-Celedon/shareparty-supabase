@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useAuth } from '../context/auth/authContext'
 import { PartyForm } from '../components/form/PartyForm'
+import { parties } from '../components/ComponentsStyles';
 export const EditParty = () => {
   const { token } = useAuth();
   const { id } = useParams();  // Obtener el ID desde la URL
@@ -21,9 +22,9 @@ export const EditParty = () => {
     });
   }, [id, token]);
   return (
-    <div>
+    <section style={parties}>
       <h1>Editar Fiesta</h1>
       {partyData && <PartyForm partyData={partyData} />} {/* Pasar los datos al formulario */}
-    </div>
+    </section>
   )
 }

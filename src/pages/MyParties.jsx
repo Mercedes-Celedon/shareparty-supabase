@@ -15,10 +15,10 @@ export const MyParties = () => {
     try {
       const response = await axios.get(API_GET_PARTIES, {
         headers: {
-          Authorization: `Bearer ${token}`,  // Pasamos el token en el header de la petición
+          Authorization: `Bearer ${token}`, 
         },
       });
-      setCards(response.data);  // Guardamos las fiestas en el estado
+      setCards(response.data);  
     } catch (error) {
       console.error('Error al obtener las fiestas:', error);
       message.error('Hubo un error al obtener las fiestas');
@@ -31,7 +31,7 @@ export const MyParties = () => {
   }, []);
 
   return (
-    <main className='parties' style={parties}>
+    <section className='parties' style={parties}>
       <Row gutter={[24, 40]}>
         <Col span={24}>
           <h1><LuPartyPopper />Fiestas creadas</h1>
@@ -43,9 +43,9 @@ export const MyParties = () => {
             </Col>
           ))
         ) : (
-          <p>No hay fiestas disponibles</p>
+          <h1>No hay fiestas disponibles</h1>
         )}
       </Row>
-    </main>
+    </section>
   )
 }

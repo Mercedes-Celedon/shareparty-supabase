@@ -6,11 +6,9 @@ const Layout = () => {
     //const { userId } = useAuth();
     return (
         <div>
-            <nav>
-                <Navbar />    
-            </nav>  
+            <Navbar />    
             <main>
-            <Outlet />
+                <Outlet />
             </main>
         </div>
     )
