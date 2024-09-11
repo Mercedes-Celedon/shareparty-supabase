@@ -1,10 +1,38 @@
 import React from 'react'
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Checkbox, Form, Input, message } from 'antd';
+import axios from 'axios';
+import { API_POST_LOG_USER} from '../../context/auth/config/url-api';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/auth/authContext';
+import { Link } from 'react-router-dom';
 
 export const LogInForm = () => {
-    const onFinish = (values) => {
-        console.log('Inicio de sesión exitoso:', values);
-      };
+  const { setToken, setUserId } = useAuth(); 
+  const navigate = useNavigate(); // Para la redirección
+
+  const onFinish = async (values) => {
+    try {
+      const response = await axios.post(API_POST_LOG_USER, {
+        email: values.email,
+        password: values.password,
+      });
+    
+    const { token, userId } = response.data; 
+
+    setToken(token);
+    setUserId(userId);
+    localStorage.setItem('token', token);
+    localStorage.setItem('loggedInUserId', userId);
+
+    message.success('Ingreso exitoso');
+    navigate('/fiestas'); 
+
+  } catch (error) {
+    console.error('Error al ingresar usuario:', error);
+    message.error('Error al ingresar el usuario');
+  }
+};
+
   return (
     <Form
       name="login"
@@ -14,7 +42,7 @@ export const LogInForm = () => {
     >
       <Form.Item
         label={<label style={{ color: "white" }}>Usuario</label>}
-        name="username"
+        name="email"
         rules={[{ required: true, message: 'Por favor ingresa tu usuario' }]}
       >
         <Input />
@@ -26,10 +54,6 @@ export const LogInForm = () => {
         rules={[{ required: true, message: 'Por favor ingresa tu contraseña' }]}
       >
         <Input.Password />
-      </Form.Item>
-
-      <Form.Item name="remember" valuePropName="checked">
-        <Checkbox>Recuérdame</Checkbox>
       </Form.Item>
       <p style={{ color: "white", textDecoration:"none" }}>¿No estás registrado?<Link to="/registrar">Registrate</Link></p>
       <Form.Item>
