@@ -5,6 +5,7 @@ import axios from 'axios';
 import { API_POST_PARTY, API_PUT_PARTY} from '../../context/auth/config/url-api';
 import { useAuth } from '../../context/auth/authContext';
 import dayjs from 'dayjs';
+import { btnImage, titlesForm } from '../ComponentsStyles';
 
 export const PartyForm = ({ partyData = null }) => {
   const [form] = Form.useForm();
@@ -85,18 +86,19 @@ export const PartyForm = ({ partyData = null }) => {
       form={form}
       layout="vertical"
       onFinish={onFinish}
-      style={{ maxWidth: '400px', margin: '0 auto' }}
+      style={{ maxWidth: '400px', margin: '0 auto', color:'white'}}
     >
       <Form.Item
         name="title"
-        label="Título"
+        label={<span style={titlesForm}>Título</span>}
         rules={[{ required: true, message: 'Por favor ingresa un título' }]}
       >
         <Input placeholder="Título de la Party" />
       </Form.Item>
+      
       <Form.Item
         name="location"
-        label="Ubicación"
+        label={<span style={titlesForm}>Ubicación</span>}
         rules={[{ required: true, message: 'Por favor ingresa la ubicación' }]}
       >
         <Input placeholder="Ubicación de la Party" />
@@ -104,13 +106,14 @@ export const PartyForm = ({ partyData = null }) => {
 
       <Form.Item
         name="description"
-        label="Descripción"
+        label={<span style={titlesForm}>Descripción</span>}
         rules={[{ required: true, message: 'Por favor ingresa una descripción' }]}
       >
         <Input.TextArea placeholder="Descripción de la Party" />
       </Form.Item>
 
       {/* <Form.Item
+       name="imageUrl"
         label="Imagen"
       >
         <Upload
@@ -121,34 +124,36 @@ export const PartyForm = ({ partyData = null }) => {
           <Button icon={<UploadOutlined />}>Seleccionar Imagen</Button>
         </Upload>
       </Form.Item> */} 
-      <input type='file' name='imageUrl' onChange={handleFileChange}/>
+      <label style={titlesForm}>*Imagen (max. 5MB) </label>
+      <input type='file' name='imageUrl' style={btnImage} onChange={handleFileChange}/>
 
-      <Form.Item>
       <Form.Item
         name="partyDate"
-        label="Fecha de la fiesta"
+        label={<span style={titlesForm}>Fecha de la fiesta</span>}
         rules={[{ required: true, message: 'Ingresa una fecha' }]}
       >
         <DatePicker format="YYYY-MM-DD"/>
       </Form.Item>
+
       <Form.Item
         name="startTime"
-        label="Hora de Inicio"
+        label={<span style={titlesForm}>Hora de inicio</span>}
         rules={[{ required: true, message: 'Por favor ingresa una hora de inicio' }]}
       >
         <TimePicker format="HH:mm:ss" />
       </Form.Item>
+
       <Form.Item
         name="endTime"
-        label="Hora de fin"
+        label={<span style={titlesForm}>Hora de inicio</span>}
         rules={[{ required: true, message: 'Por favor ingresa una hora de fin' }]}
       >
         <TimePicker format="HH:mm:ss"/>
       </Form.Item>
+
         <Button type="primary" htmlType="submit" block>
-          Crear Party
+          Crear Fiesta
         </Button>
-      </Form.Item>
     </Form>
   )
 }

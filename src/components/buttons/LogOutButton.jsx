@@ -9,7 +9,7 @@ export const LogOutButton = () => {
 
   return (
     <Link to="/">
-        <Button type="primary" style={{ marginRight: '10px' }} onClick={logout}>
+        <Button type="primary" style={{background:'#2D024F',padding: '26px 14px', fontSize: '30px'}} onClick={logout}>
             <LoginOutlined />
         </Button>
     </Link>
