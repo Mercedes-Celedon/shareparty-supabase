@@ -28,28 +28,7 @@ export const MyParties = () => {
   useEffect(() => {
     fetchParties();  // Llamamos a la función para obtener las fiestas
   }, []);
-/*   const cards=[
-    {
-      id: '1',
-      img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
-      title: 'Fiesta de Cumpleaños'
-    },
-    {
-      id: '2',
-      img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
-      title: 'Fiesta en la Playa'
-    },
-    {
-      id: '3',
-      img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
-      title: 'Fiesta de Despedida'
-    },
-    {
-      id: '4',
-      img: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
-      title: 'Fiesta en la Terraza'
-    }
-  ]; */
+
   return (
     <main className='parties' style={parties}>
       <Row gutter={[24, 40]}>
