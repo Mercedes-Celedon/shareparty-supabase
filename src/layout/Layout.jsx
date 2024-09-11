@@ -1,13 +1,14 @@
 import { Outlet} from "react-router-dom"
 import { Navbar } from "../components/navbar/Navbar"
-import { useAuth } from "../context/auth/authConext";
+import { useAuth } from "../context/auth/authContext";
 
 const Layout = () => {
-    const { userId } = useAuth();
+    //const { userId } = useAuth();
     return (
         <div>
             <nav>
-                {userId &&<Navbar />}    
+                
+                <Navbar />    
             </nav>  
             <main>
             <Outlet />

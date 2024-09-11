@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export const MyInvitationsButton = () => {
   return (
-    <Link to="/">
+    <Link to="mis-fiestas">
         <Button type="primary" >
             <LuPartyPopper />
         </Button>
