@@ -5,8 +5,8 @@ import { btn } from '../ComponentsStyles';
 
 export const RegisterButton = () => {
   return (
-    <Link to="/registrar">
-        <Button type="primary" style={btn}>
+    <Link to="/registrar"style={btn}>
+      <Button type="primary" size="large" block>
             Registrate
         </Button>
     </Link>

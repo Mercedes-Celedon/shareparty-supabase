@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const AddPartyButton = () => {
   return (
-    <Link to="/">
+    <Link to="crear">
         <Button type="primary" >
           <PlusOutlined />
         </Button>

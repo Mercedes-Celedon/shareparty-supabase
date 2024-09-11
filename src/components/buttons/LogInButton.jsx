@@ -5,8 +5,8 @@ import { btn } from '../ComponentsStyles';
 
 export const LogInButton = () => {
   return (
-    <Link to="/ingresar">
-      <Button type="primary" style={btn}>
+    <Link to="/ingresar" style={btn}>
+      <Button type="primary" size="large" block>
           Ingresar
       </Button>
     </Link>
