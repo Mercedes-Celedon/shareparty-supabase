@@ -29,3 +29,8 @@ export const logoStyle = {
     minHeight: '100vh',
     padding:'20px,10px'
   }
+
+  export const imgSingleParty={
+    display:'flex',
+    alignItems: 'center'
+  }
