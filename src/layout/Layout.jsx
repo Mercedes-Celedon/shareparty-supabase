@@ -7,7 +7,6 @@ const Layout = () => {
     return (
         <div>
             <nav>
-                
                 <Navbar />    
             </nav>  
             <main>

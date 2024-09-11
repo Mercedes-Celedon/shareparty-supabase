@@ -10,9 +10,17 @@ export const logoStyle = {
   }
 
   export const home={
-    display: 'flex',          // Usar flexbox para alinear contenido
-    flexDirection: 'column',  // Alinear elementos en columna
-    justifyContent: 'center', // Centrar verticalmente
-    alignItems: 'center',     // Centrar horizontalmente
+    display: 'flex',         
+    flexDirection: 'column',  
+    justifyContent: 'center', 
+    alignItems: 'center',    
     minHeight: '100vh',
+  }
+  export const parties={
+    display: 'flex',          
+    flexDirection: 'column',  
+    justifyContent: 'flex-start', 
+    alignItems: 'center',     
+    minHeight: '100vh',
+    padding:'20px,10px'
   }
