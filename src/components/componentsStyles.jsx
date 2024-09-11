@@ -8,6 +8,11 @@ export const logoStyle = {
     paddding: '70px',
     margin:'10px 20px'
   }
+  export const navbar={
+    padding:'10px 0px',
+    background:'#D9D9D9',
+    height:'auto'
+  }
 
   export const home={
     display: 'flex',         
