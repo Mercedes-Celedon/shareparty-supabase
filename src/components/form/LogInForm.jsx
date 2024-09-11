@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Checkbox, Form, Input, message } from 'antd';
+import { Button, Form, Input, message } from 'antd';
 import axios from 'axios';
 import { API_POST_LOG_USER} from '../../context/auth/config/url-api';
 import { useNavigate } from 'react-router-dom';
@@ -25,7 +25,7 @@ export const LogInForm = () => {
     localStorage.setItem('loggedInUserId', userId);
 
     message.success('Ingreso exitoso');
-    navigate('/fiestas'); 
+    navigate('/fiestas/mis-fiestas'); 
 
   } catch (error) {
     console.error('Error al ingresar usuario:', error);

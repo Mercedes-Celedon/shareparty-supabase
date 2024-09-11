@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Input, Button, Upload, message } from 'antd';
+import { Form, Input, Button, Upload, message, DatePicker, TimePicker } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import { API_POST_PARTY} from '../../context/auth/config/url-api';
@@ -25,6 +25,9 @@ export const PartyForm = () => {
     formData.append('location',values.location);
     formData.append('description', values.description);
     formData.append('imageUrl',imageFile);
+    formData.append('partyDate', values.description);
+    formData.append('startTime', values.description);
+    formData.append('endTime', values.description);
 
     values.imageUrl = imageFile;
     console.log(values);
@@ -92,6 +95,27 @@ export const PartyForm = () => {
       <input type='file' name='imageUrl' onChange={handleFileChange}/>
 
       <Form.Item>
+      <Form.Item
+        name="partyDate"
+        label="Fecha de la fiesta"
+        rules={[{ required: true, message: 'Ingresa una fecha' }]}
+      >
+        <DatePicker />
+      </Form.Item>
+      <Form.Item
+        name="startTime"
+        label="Hora de Inicio"
+        rules={[{ required: true, message: 'Por favor ingresa una hora de inicio' }]}
+      >
+        <TimePicker />
+      </Form.Item>
+      <Form.Item
+        name="endTime"
+        label="Hora de fin"
+        rules={[{ required: true, message: 'Por favor ingresa una hora de fin' }]}
+      >
+        <TimePicker />
+      </Form.Item>
         <Button type="primary" htmlType="submit" block>
           Crear Party
         </Button>

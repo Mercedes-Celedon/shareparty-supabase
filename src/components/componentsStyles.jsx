@@ -8,11 +8,24 @@ export const logoStyle = {
     paddding: '70px',
     margin:'10px 20px'
   }
+  export const navbar={
+    padding:'10px 0px',
+    background:'#D9D9D9',
+    height:'auto'
+  }
 
   export const home={
-    display: 'flex',          // Usar flexbox para alinear contenido
-    flexDirection: 'column',  // Alinear elementos en columna
-    justifyContent: 'center', // Centrar verticalmente
-    alignItems: 'center',     // Centrar horizontalmente
+    display: 'flex',         
+    flexDirection: 'column',  
+    justifyContent: 'center', 
+    alignItems: 'center',    
     minHeight: '100vh',
+  }
+  export const parties={
+    display: 'flex',          
+    flexDirection: 'column',  
+    justifyContent: 'flex-start', 
+    alignItems: 'center',     
+    minHeight: '100vh',
+    padding:'20px,10px'
   }
