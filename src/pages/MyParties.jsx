@@ -5,6 +5,7 @@ import { CardSingleParty } from '../components/cards/CardSingleParty'
 import axios from 'axios';
 import { useAuth } from '../context/auth/authContext';
 import { API_GET_PARTIES } from '../context/auth/config/url-api';
+import { LuPartyPopper } from "react-icons/lu";
 
 export const MyParties = () => {
   const [cards, setCards] = useState([]);  
@@ -32,6 +33,9 @@ export const MyParties = () => {
   return (
     <main className='parties' style={parties}>
       <Row gutter={[24, 40]}>
+        <Col span={24}>
+          <h1><LuPartyPopper />Fiestas creadas</h1>
+        </Col>
       {cards.length > 0 ? (
           cards.map((card) => (
             <Col span={12} key={card.id}>
