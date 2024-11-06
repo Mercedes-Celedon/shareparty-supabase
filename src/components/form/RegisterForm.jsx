@@ -19,9 +19,8 @@ export const RegisterForm = () => {
         password: values.password,
       });
     // Verificar si la respuesta tiene el token
-    const { token, userId } = response.data; // Asegúrate de que el backend envía token y userId
+    const { token, userId } = response.data; 
 
-    // Guardar el token y el userId en el contexto y en el localStorage
     setToken(token);
     setUserId(userId);
     localStorage.setItem('token', token);
